@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642056469420",
+    "project_id": "coneapp-cffaf",
+    "storage_bucket": "coneapp-cffaf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642056469420:android:09c697aac7dddb12aad809",
+        "android_client_info": {
+          "package_name": "com.example.movieapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA57LWAgo0IYWaaRlymkElyTelSlbStoXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

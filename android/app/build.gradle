@@ -1,0 +1,65 @@
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+     // Ensure this is at the bottom after other plugins
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
+if (flutterVersionCode == null) {
+    flutterVersionCode = "1"
+}
+
+def flutterVersionName = localProperties.getProperty("flutter.versionName")
+if (flutterVersionName == null) {
+    flutterVersionName = "1.0"
+}
+
+android {
+    namespace = "com.example.movieapp"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        // Unique Application ID for your app
+        applicationId = "com.example.movieapp"
+        
+        // Android SDK configurations
+        minSdkVersion 24 // Minimum SDK version
+        targetSdk = flutter.targetSdkVersion  // Set the target SDK version based on Flutter configuration
+        
+        // Version info
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
+    }
+
+    buildTypes {
+        release {
+            // Signing config for release builds
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Source path for your Flutter project
+}
+
+dependencies {
+}
