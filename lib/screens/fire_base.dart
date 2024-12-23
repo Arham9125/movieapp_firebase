@@ -1,9 +1,10 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-void addMovieToFirestore(String title) {
-  FirebaseFirestore.instance.collection('movies').add({
-    'title': title,
+void addMovieToFirestore(String name, String price) {
+  FirebaseFirestore.instance.collection('makeup').add({
+    'name': name,
+    'price': price,
     'timestamp': FieldValue.serverTimestamp(), 
   });
 }

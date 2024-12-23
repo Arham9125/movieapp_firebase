@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:movieapp/screens/mmodel.dart';
 
 class ViewPage extends StatelessWidget {
-  final Movie movie_name;
+  final Movie makeup;
 
-  ViewPage({required this.movie_name});
+  ViewPage({required this.makeup});
 
   @override
   Widget build(BuildContext context) {
-    String imageUrl = '${movie_name.poster}';
+    String imageUrl = '${makeup.image_link}';
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text(movie_name.title.toString()), 
+        title: Text(makeup.name.toString()), 
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -30,12 +30,12 @@ class ViewPage extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                movie_name.title.toString(),
+                makeup.name.toString(),
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8),
               Text(
-                'Release Date: ${movie_name.year}',
+                'Release Date: ${makeup.price}',
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               ),
               SizedBox(height: 16),
@@ -45,7 +45,8 @@ class ViewPage extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                '${movie_name.title} are a form of visual storytelling that combines elements like acting, direction, cinematography, sound, and editing to create an immersive experience. They span across various genres, including drama, action, comedy, horror, and science fiction, catering to diverse tastes. Over the years, movies have evolved with technological advancements, from silent films to modern CGI spectacles. They serve as both entertainment and a medium for exploring cultural, social, and political themes. From independent productions to blockbuster franchises, movies have a profound impact on popular culture, influencing trends, shaping public opinion, and providing a platform for creative expression.',
+                '${makeup.description}'  ,
+               
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(height: 16),
@@ -59,7 +60,7 @@ class ViewPage extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.5, 
                         width: double.infinity,
                         child: AnyLinkPreview(
-                          link: 'https://www.imdb.com/', 
+                          link: 'https://well.ca/products/maybelline-face-studio-master_88837.html', 
                           previewHeight: 200, 
                           showMultimedia: true,
                           
@@ -77,7 +78,7 @@ class ViewPage extends StatelessWidget {
                   width: double.infinity,
                   child: Center(
                     child: Text(
-                      "Movie Link",
+                      "Makup Link",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
